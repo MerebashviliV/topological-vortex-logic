@@ -5,7 +5,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 
 `TVL.py` is a single-file Python implementation of the classification map studied in the
-companion paper: it assigns to every integer winding vector w ∈ ℤ³ on the three-torus its
+associated paper: it assigns to every integer winding vector w ∈ ℤ³ on the three-torus its
 stability, shell, selected mod-three charge class, traceless-projection data, and weight
 class, and it verifies the root-system and module-theoretic structures the paper proves.
 It is a verification and exploration tool, not a proof: every result it exercises is
@@ -14,7 +14,7 @@ established analytically in the paper, and no proof depends on the code.
 The module is deliberately split into two layers, so that the mathematics can be used
 without the physical reading.
 
-**Companion paper.** Vladimer Merebashvili, *Topological Vortex Logic: Stability, Root
+**Associated paper** (a separate Zenodo record; the software is deposited on its own). Vladimer Merebashvili, *Topological Vortex Logic: Stability, Root
 Systems, and Module Structure of Winding States on T³ with a Selected Z₃ Grading*,
 [10.5281/zenodo.19682633](https://doi.org/10.5281/zenodo.19682633) (concept DOI, always
 resolves to the latest version).
@@ -79,7 +79,7 @@ Cite the software by its concept DOI, which always resolves to the latest versio
 > Merebashvili, V. *TVL.py — Topological Vortex Logic*. Zenodo.
 > https://doi.org/10.5281/zenodo.19683376
 
-If you use the results themselves, cite the companion paper
+If you use the results themselves, cite the associated paper
 ([10.5281/zenodo.19682633](https://doi.org/10.5281/zenodo.19682633)) as well: the proofs
 are there, not in the code.
 
@@ -87,17 +87,17 @@ are there, not in the code.
 
 #### v1.0.8 — 3 August 2026
 
-Synchronised with the companion paper's v1.0.8 release
+Synchronised with the associated paper's v1.0.8 release
 ([10.5281/zenodo.21765104](https://doi.org/10.5281/zenodo.21765104)). No numerical value
 changes.
 
 - The corner-orbit charge split is added as classifier output and verified in the suite:
   the q₃ = 1 non-diagonal corners project into {−2μᵢ} and the q₃ = 2 corners into
-  {+2μᵢ}, the direction established in the companion paper's corrected statement.
+  {+2μᵢ}, the direction established in the paper's corrected statement.
 - Group naming aligned with the paper throughout: Z₃ is the charge grading, C₃ the
   coordinate cycle.
-- The module-invariant table no longer names the companion paper by series label in its
-  printed output; it is referred to as the companion paper.
+- The module-invariant table no longer names the associated paper by series label in its
+  printed output; it is referred to as the associated paper.
 - Documentation-layer clarifications.
 - Self-test extended to 65 checks.
 

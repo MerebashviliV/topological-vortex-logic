@@ -2,9 +2,9 @@
 TVL.py  —  Topological Vortex Logic
 =====================================
 Version 1.0.8 · August 3, 2026 · software concept DOI 10.5281/zenodo.19683376
-Companion paper: "Stability, Root Systems, and Module Structure of Winding
+Associated paper (separate record): "Stability, Root Systems, and Module Structure of Winding
 States on T³ with a Selected Z₃ Grading", v1.0.8, DOI 10.5281/zenodo.21765104.
-v1.0.8: adds the corner-orbit charge split of the companion paper (Theorem 2,
+v1.0.8: adds the corner-orbit charge split of the associated paper (Theorem 2,
 corrected direction) as classifier output and self-test; aligns group naming
 with the paper's conventions (Z₃ = the charge grading, C₃ = the coordinate
 cycle); documentation-layer clarifications. No numerical value changes.
@@ -302,7 +302,7 @@ class TVL:
         if n2t == 2:
             return 'A2 root'
         if n2t == Fraction(8, 3):
-            # Corner (exotic) layer, split by charge per the companion paper's
+            # Corner (exotic) layer, split by charge per the associated paper's
             # corrected Theorem 2: q3 = 1 projects into {-2 mu_i}, q3 = 2 into {+2 mu_i}.
             return ('weight orbit {-2mu_i} (not one irrep)' if q3 == 1
                     else 'weight orbit {+2mu_i} (not one irrep)')
@@ -419,7 +419,7 @@ class TVL:
     def print_module_invariants() -> None:
         """Print the coordinate-C3 module-invariant table for the three shells."""
         inv = TVL.z3_module_invariants()
-        print('\nCoordinate-C3 module invariants (companion paper, Theorem 5)')
+        print('\nCoordinate-C3 module invariants (associated paper, Theorem 5)')
         print('-' * 60)
         print(f'  {"shell":<8} {"N":>4} {"fixed":>6} {"rho0":>6} '
               f'{"m1=m2":>6} {"uniform":>8}')
@@ -829,7 +829,7 @@ def _self_test() -> bool:
     if failures:
         print(f'\n{len(failures)} check(s) FAILED.')
         return False
-    # -- Corner-orbit charge split (companion paper Theorem 2, corrected) --
+    # -- Corner-orbit charge split (associated paper Theorem 2, corrected) --
     _mu = [tuple(Fraction(2, 3) if j == i else Fraction(-1, 3) for j in range(3))
            for i in range(3)]
     _ok1 = _ok2 = _okc = True
