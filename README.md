@@ -16,7 +16,8 @@ without the physical reading.
 
 **Companion paper.** Vladimer Merebashvili, *Topological Vortex Logic: Stability, Root
 Systems, and Module Structure of Winding States on T³ with a Selected Z₃ Grading*,
-[10.5281/zenodo.19682633](https://doi.org/10.5281/zenodo.19682633).
+[10.5281/zenodo.19682633](https://doi.org/10.5281/zenodo.19682633) (concept DOI, always
+resolves to the latest version).
 
 **Requirements.** Python 3.8 or later. Standard library only — no third-party
 dependencies, and no installation step: download `TVL.py` and run it.
@@ -32,6 +33,12 @@ witness for unstable inputs (`closed_form_stable`), enumeration of the 26 stable
 (`z3_module_invariants`), and verifiers for both root systems
 (`verify_a2_root_system`, `verify_b3_root_system`).
 
+The winding class is typed as an element of H¹(T³; ℤ). Two distinct order-three
+structures appear and are kept apart throughout: **Z₃** is the charge grading, the target
+of the diagonal homomorphism w ↦ tr(w) mod 3; **C₃** is the coordinate cycle
+g: (w₁,w₂,w₃) ↦ (w₂,w₃,w₁) acting on the shells. Cartan matrices follow the paper's
+row-coroot convention.
+
 ## Optional conjectural adapter
 
 `TVLInterpretation.read(w)` returns a `PhysicalReading` supplying a baryon number and a
@@ -39,16 +46,18 @@ particle-sector label. These are an interpretation matched to the mathematics, n
 consequences of it; they are kept in a separate object, are never attached to the
 mathematical state, and are refused for vacuum and unstable vectors.
 
-## Results exercised by the built-in suite (62 checks)
+## Results exercised by the built-in suite (65 checks)
 
 The 26-state stable vocabulary and the 6/12/8 shells; the 8/9/9 charge-class
 distribution; the weight classes, including the six-element orbit {±2μᵢ}, which is
-reported as a weight orbit and not as any single irreducible representation; the A₂
-root system (root count, reducedness, integrality, reflection closure, Cartan matrix);
-the B₃ root system, with its Weyl group generated from the simple-root reflections,
-checked to have order 48 and to coincide with the group of signed coordinate
-permutations; and the coordinate-C₃ module invariants — character traces (0, 0, 2) and
-invariant-subspace dimensions (2, 4, 4) — that distinguish the three shells.
+reported as a weight orbit and not as any single irreducible representation, and its
+split by charge class — the q₃ = 1 non-diagonal corners project into {−2μᵢ} and the
+q₃ = 2 corners into {+2μᵢ}; the A₂ root system (root count, reducedness, integrality,
+reflection closure, Cartan matrix); the B₃ root system, with its Weyl group generated
+from the simple-root reflections, checked to have order 48 and to coincide with the group
+of signed coordinate permutations; and the coordinate-C₃ module invariants — character
+traces (0, 0, 2) and invariant-subspace dimensions (2, 4, 4) — that distinguish the three
+shells.
 
 ## Command line
 
@@ -75,6 +84,22 @@ If you use the results themselves, cite the companion paper
 are there, not in the code.
 
 ## Changelog
+
+#### v1.0.8 — 3 August 2026
+
+Synchronised with the companion paper's v1.0.8 release
+([10.5281/zenodo.21765104](https://doi.org/10.5281/zenodo.21765104)). No numerical value
+changes.
+
+- The corner-orbit charge split is added as classifier output and verified in the suite:
+  the q₃ = 1 non-diagonal corners project into {−2μᵢ} and the q₃ = 2 corners into
+  {+2μᵢ}, the direction established in the companion paper's corrected statement.
+- Group naming aligned with the paper throughout: Z₃ is the charge grading, C₃ the
+  coordinate cycle.
+- The module-invariant table no longer names the companion paper by series label in its
+  printed output; it is referred to as the companion paper.
+- Documentation-layer clarifications.
+- Self-test extended to 65 checks.
 
 #### v1.0.7 — 22 July 2026
 
